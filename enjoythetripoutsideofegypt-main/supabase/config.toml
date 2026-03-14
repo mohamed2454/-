@@ -1,0 +1,4 @@
+project_id = "rdomdtjscreuiidvopor"
+
+[functions.museum-chat]
+verify_jwt = false

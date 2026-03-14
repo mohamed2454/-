@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* Egyptian-inspired color palette */
+    --background: 45 30% 96%;
+    --foreground: 30 25% 12%;
+
+    --card: 45 40% 98%;
+    --card-foreground: 30 25% 12%;
+
+    --popover: 45 40% 98%;
+    --popover-foreground: 30 25% 12%;
+
+    /* Royal Gold - Primary */
+    --primary: 43 74% 49%;
+    --primary-foreground: 30 25% 8%;
+
+    /* Lapis Lazuli Blue - Secondary */
+    --secondary: 215 65% 25%;
+    --secondary-foreground: 45 40% 98%;
+
+    /* Papyrus/Sand - Muted */
+    --muted: 42 35% 90%;
+    --muted-foreground: 30 15% 40%;
+
+    /* Turquoise Accent */
+    --accent: 175 50% 40%;
+    --accent-foreground: 45 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 42 30% 85%;
+    --input: 42 30% 88%;
+    --ring: 43 74% 49%;
+
+    --radius: 0.75rem;
+
+    /* Custom Egyptian tokens */
+    --gold: 43 74% 49%;
+    --gold-light: 45 70% 65%;
+    --gold-dark: 40 80% 35%;
+    --pharaoh-blue: 215 65% 25%;
+    --pharaoh-blue-light: 215 55% 45%;
+    --nile-teal: 175 50% 40%;
+    --papyrus: 42 35% 92%;
+    --sand: 38 40% 85%;
+    --terracotta: 18 60% 50%;
+    --bronze: 30 45% 35%;
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(43, 74%, 49%) 0%, hsl(45, 70%, 65%) 50%, hsl(40, 80%, 35%) 100%);
+    --gradient-royal: linear-gradient(135deg, hsl(215, 65%, 25%) 0%, hsl(215, 55%, 45%) 100%);
+    --gradient-sand: linear-gradient(180deg, hsl(45, 30%, 96%) 0%, hsl(42, 35%, 90%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(30, 25%, 12%) 0%, hsl(215, 65%, 25%) 50%, hsl(30, 25%, 18%) 100%);
+
+    /* Shadows */
+    --shadow-gold: 0 4px 20px -4px hsla(43, 74%, 49%, 0.3);
+    --shadow-elevated: 0 10px 40px -10px hsla(30, 25%, 12%, 0.15);
+    --shadow-card: 0 4px 16px -4px hsla(30, 25%, 12%, 0.08);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 30 25% 8%;
+    --foreground: 45 30% 95%;
+
+    --card: 30 20% 12%;
+    --card-foreground: 45 30% 95%;
+
+    --popover: 30 20% 12%;
+    --popover-foreground: 45 30% 95%;
+
+    --primary: 43 74% 55%;
+    --primary-foreground: 30 25% 8%;
+
+    --secondary: 215 55% 35%;
+    --secondary-foreground: 45 40% 98%;
+
+    --muted: 30 15% 18%;
+    --muted-foreground: 42 20% 65%;
+
+    --accent: 175 45% 45%;
+    --accent-foreground: 30 25% 8%;
+
+    --destructive: 0 62.8% 45%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 15% 20%;
+    --input: 30 15% 22%;
+    --ring: 43 74% 55%;
+
+    --gold: 43 74% 55%;
+    --gold-light: 45 70% 70%;
+    --gold-dark: 40 80% 40%;
+    --pharaoh-blue: 215 55% 35%;
+    --pharaoh-blue-light: 215 50% 50%;
+    --papyrus: 30 15% 15%;
+    --sand: 30 20% 20%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    font-family: 'Amiri', serif;
+  }
+
+  [dir="ltr"] {
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6 {
+    font-family: 'Amiri', serif;
+  }
+}
+
+@layer components {
+  .egyptian-border {
+    @apply relative;
+  }
+  
+  .egyptian-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-lg pointer-events-none;
+    background: var(--gradient-gold);
+    padding: 2px;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask-composite: xor;
+  }
+
+  .hieroglyphic-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5L35 15L30 25L25 15L30 5Z' fill='%23D4AF3715'/%3E%3Ccircle cx='15' cy='30' r='5' fill='%23D4AF3710'/%3E%3Ccircle cx='45' cy='30' r='5' fill='%23D4AF3710'/%3E%3Cpath d='M30 35L35 45L30 55L25 45L30 35Z' fill='%23D4AF3715'/%3E%3C/svg%3E");
+  }
+
+  .glass-card {
+    @apply backdrop-blur-md bg-card/80 border border-border/50;
+    box-shadow: var(--shadow-card);
+  }
+
+  .gold-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--gold)) 0%,
+      hsl(var(--gold-light)) 25%,
+      hsl(var(--gold)) 50%,
+      hsl(var(--gold-light)) 75%,
+      hsl(var(--gold)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0%, 100% { background-position: 200% 0; }
+    50% { background-position: 0% 0; }
+  }
+
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn-royal {
+    @apply relative overflow-hidden;
+    background: var(--gradient-gold);
+    box-shadow: var(--shadow-gold);
+  }
+
+  .btn-royal::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(135deg, transparent 0%, hsla(45, 70%, 65%, 0.4) 50%, transparent 100%);
+  }
+
+  .btn-royal:hover::before {
+    @apply opacity-100;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--gold));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--gold-dark));
+}
